@@ -54,7 +54,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="2"
                 android:gravity="center"
-                android:text="Tap and hold the element you want to check"
+                android:text="Tap an element to open its menu"
                 android:textColor="#000"
                 android:textSize="24sp" />
 

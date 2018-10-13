@@ -51,16 +51,8 @@ public class SecondActivity extends AppCompatActivity implements AdapterView.OnI
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
         sum = 0;
         n = i+1;
-        if(s){
-            sum = ((n*((2*a1)+d_q*(n-1)))/2);
-        }
-        else {
-            if(d_q==1)
-                sum = a1*n;
-            else
-                sum = ((a1 * ((Math.pow(d_q, n)) - 1)) / (d_q - 1));
-        }
         adapterView.setOnCreateContextMenuListener(this);
+        openContextMenu(adapterView);
     }
 
     @Override
@@ -83,8 +75,18 @@ public class SecondActivity extends AppCompatActivity implements AdapterView.OnI
             tv1.setText(Double.toString(n));
         if(st=="d/q")
             tv1.setText(Double.toString(d_q));
-        if (st=="Sn")
+        if (st=="Sn") {
+            if(s){
+                sum = ((n*((2*a1)+d_q*(n-1)))/2);
+            }
+            else {
+                if(d_q==1)
+                    sum = a1*n;
+                else
+                    sum = ((a1 * ((Math.pow(d_q, n)) - 1)) / (d_q - 1));
+            }
             tv1.setText(Double.toString(sum));
+        }
         return super.onContextItemSelected(item);
     }
 
