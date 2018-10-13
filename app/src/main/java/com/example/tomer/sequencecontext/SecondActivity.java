@@ -53,6 +53,7 @@ public class SecondActivity extends AppCompatActivity implements AdapterView.OnI
         n = i+1;
         adapterView.setOnCreateContextMenuListener(this);
         openContextMenu(adapterView);
+        adapterView.setOnCreateContextMenuListener(null);
     }
 
     @Override
