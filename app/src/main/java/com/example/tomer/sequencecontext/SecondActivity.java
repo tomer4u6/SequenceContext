@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.ContextMenu;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.*;
@@ -89,6 +90,20 @@ public class SecondActivity extends AppCompatActivity implements AdapterView.OnI
             tv1.setText(Double.toString(sum));
         }
         return super.onContextItemSelected(item);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        String st = item.getTitle().toString();
+        if(st.equals("Credits"))
+            Toast.makeText(this, "This app was created by Tomer Ben Ari", Toast.LENGTH_LONG).show();
+        return super.onOptionsItemSelected(item);
     }
 
     public void back(View view) {
